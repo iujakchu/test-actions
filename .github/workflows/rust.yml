@@ -34,5 +34,5 @@ jobs:
       uses: rust-build/rust-build.action@v1.2.4
       with:
     # Output target
-        RUSTTARGET: ${{matrix.target}}
-        GITHUB_TOKEN: ${{secrets.wtf}}
+        RUSTTARGET: ${{ matrix.target }}
+        GITHUB_TOKEN: ${{ secrets.wtf }}
