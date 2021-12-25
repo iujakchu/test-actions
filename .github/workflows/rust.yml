@@ -25,14 +25,14 @@ jobs:
             archive: zip
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@master
     - name: Build
       run: cargo build --verbose
     - name: Run tests
       run: cargo test --verbose
     - name: Rust Release binary
-      uses: rust-build/rust-build.action@v1.2.4
-      with:
+      uses: rust-build/rust-build.action@latest
+      env:
     # Output target
         RUSTTARGET: ${{ matrix.target }}
         GITHUB_TOKEN: ${{ secrets.wtf }}
