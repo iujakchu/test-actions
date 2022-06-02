@@ -7,9 +7,14 @@ on:
     branches: [ master ]
 
 jobs:
-
+  rust-check:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Check rust
+      run: cargo check --verbose
   build:
-
+    needs: rust-check
     runs-on: ubuntu-latest
 
     steps:
